@@ -27,20 +27,74 @@ public class Principal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel1 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        txtReal2 = new javax.swing.JTextField();
+        txtReal1 = new javax.swing.JTextField();
+        txtImaginario1 = new javax.swing.JTextField();
+        txtImaginario2 = new javax.swing.JTextField();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        cmbOperacion = new javax.swing.JComboBox<>();
+        cmdCalcular = new javax.swing.JButton();
+        cmdBorrar = new javax.swing.JButton();
+        txtRealResul = new javax.swing.JTextField();
+        txtImaginarioResul = new javax.swing.JTextField();
+        jLabel5 = new javax.swing.JLabel();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        jPanel1.setBackground(new java.awt.Color(0, 204, 204));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(0, 0, 51));
+        jLabel1.setText("Operaciones Con Complejos");
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 0, -1, -1));
+        jPanel1.add(txtReal2, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 60, 30, 30));
+        jPanel1.add(txtReal1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 60, 30, 30));
+        jPanel1.add(txtImaginario1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 60, 30, 30));
+        jPanel1.add(txtImaginario2, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 60, 30, 30));
+
+        jLabel3.setFont(new java.awt.Font("Segoe Script", 3, 14)); // NOI18N
+        jLabel3.setText("i");
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 70, 30, -1));
+
+        jLabel4.setFont(new java.awt.Font("Segoe Script", 3, 14)); // NOI18N
+        jLabel4.setText("i");
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 70, 30, -1));
+
+        cmbOperacion.setBackground(new java.awt.Color(204, 255, 255));
+        cmbOperacion.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "+", "-", "*", "/" }));
+        jPanel1.add(cmbOperacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 70, -1, -1));
+
+        cmdCalcular.setBackground(new java.awt.Color(204, 255, 255));
+        cmdCalcular.setText("Calcular");
+        jPanel1.add(cmdCalcular, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 140, -1, -1));
+
+        cmdBorrar.setBackground(new java.awt.Color(204, 255, 255));
+        cmdBorrar.setText("Borrar");
+        jPanel1.add(cmdBorrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 140, -1, -1));
+        jPanel1.add(txtRealResul, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 200, 30, 30));
+        jPanel1.add(txtImaginarioResul, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 200, 30, 30));
+
+        jLabel5.setFont(new java.awt.Font("Segoe Script", 3, 14)); // NOI18N
+        jLabel5.setText("i");
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 210, 30, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 523, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 314, Short.MAX_VALUE)
         );
 
-        pack();
+        setSize(new java.awt.Dimension(539, 353));
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     /**
@@ -79,5 +133,19 @@ public class Principal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JComboBox<String> cmbOperacion;
+    private javax.swing.JButton cmdBorrar;
+    private javax.swing.JButton cmdCalcular;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JTextField txtImaginario1;
+    private javax.swing.JTextField txtImaginario2;
+    private javax.swing.JTextField txtImaginarioResul;
+    private javax.swing.JTextField txtReal1;
+    private javax.swing.JTextField txtReal2;
+    private javax.swing.JTextField txtRealResul;
     // End of variables declaration//GEN-END:variables
 }
