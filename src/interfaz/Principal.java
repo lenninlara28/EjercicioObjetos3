@@ -5,6 +5,8 @@
  */
 package interfaz;
 
+import clases.NumeroComplejo;
+
 /**
  *
  * @author hp 14
@@ -70,12 +72,21 @@ public class Principal extends javax.swing.JFrame {
 
         cmdCalcular.setBackground(new java.awt.Color(204, 255, 255));
         cmdCalcular.setText("Calcular");
+        cmdCalcular.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmdCalcularActionPerformed(evt);
+            }
+        });
         jPanel1.add(cmdCalcular, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 140, -1, -1));
 
         cmdBorrar.setBackground(new java.awt.Color(204, 255, 255));
         cmdBorrar.setText("Borrar");
         jPanel1.add(cmdBorrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 140, -1, -1));
+
+        txtRealResul.setEditable(false);
         jPanel1.add(txtRealResul, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 200, 30, 30));
+
+        txtImaginarioResul.setEditable(false);
         jPanel1.add(txtImaginarioResul, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 200, 30, 30));
 
         jLabel5.setFont(new java.awt.Font("Segoe Script", 3, 14)); // NOI18N
@@ -96,6 +107,34 @@ public class Principal extends javax.swing.JFrame {
         setSize(new java.awt.Dimension(539, 353));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void cmdCalcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdCalcularActionPerformed
+        int op,num_real1,num_imaginario1,num_real2,num_imaginario2;
+        NumeroComplejo c1,c2,c3=null;
+        op=cmbOperacion.getSelectedIndex();
+        num_real1=Integer.parseInt(txtReal1.getText());
+        num_imaginario1=Integer.parseInt(txtImaginario1.getText());
+        num_real2=Integer.parseInt(txtReal2.getText());
+        num_imaginario2=Integer.parseInt(txtImaginario2.getText());
+        
+        c1=new NumeroComplejo(num_real1, num_imaginario1);
+        c2=new NumeroComplejo(num_real2, num_imaginario2);
+        
+        switch(op){
+            case 0:
+                c3=c1.Suma(c2);
+                break;
+            case 1:
+                c3=c1.Resta(c2);
+                break;
+            case 2:
+                c3=c1.Multiplicacion(c2);
+                break;
+        }
+        txtRealResul.setText(""+c3.getNumero_real());
+        txtImaginarioResul.setText(""+c3.getNumero_imaginario());
+        
+    }//GEN-LAST:event_cmdCalcularActionPerformed
 
     /**
      * @param args the command line arguments

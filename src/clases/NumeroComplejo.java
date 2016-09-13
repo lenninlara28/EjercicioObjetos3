@@ -35,4 +35,38 @@ public class NumeroComplejo {
         this.numero_imaginario = numero_imaginario;
     }
     
+    public NumeroComplejo Suma(NumeroComplejo c2){
+        NumeroComplejo c;
+        int num_real,num_imaginario;
+        num_real=this.numero_real + c2.numero_real;
+        num_imaginario=this.numero_imaginario + c2.numero_imaginario;
+        
+       c= new NumeroComplejo(num_real, num_imaginario);
+       return c;
+    }
+    public NumeroComplejo Resta(NumeroComplejo c2){
+        NumeroComplejo c;
+        int num_real,num_imaginario;
+        num_real=this.numero_real - c2.numero_real;
+        num_imaginario=this.numero_imaginario - c2.numero_imaginario;
+        
+       c= new NumeroComplejo(num_real, num_imaginario);
+       return c;
+    }
+    public NumeroComplejo Multiplicacion(NumeroComplejo c2){
+        NumeroComplejo c;
+        int num_real,num_imaginario,comutativo_real1,comutativo_real2,comutativo_imaginario1,comutativo_imaginario2;
+        comutativo_real1=this.numero_real*c2.numero_real ;
+        comutativo_real2=this.numero_real*(-c2.numero_imaginario);
+        comutativo_imaginario1=this.numero_imaginario*c2.numero_real;
+        comutativo_imaginario2=this.numero_imaginario*c2.numero_imaginario;
+        num_imaginario=comutativo_real2 + comutativo_imaginario1;
+        num_real= comutativo_real1 + comutativo_imaginario2;
+        
+        c =new  NumeroComplejo(num_real,num_imaginario); 
+        return c;
+    }
+
+    
+    
 }
