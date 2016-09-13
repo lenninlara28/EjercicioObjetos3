@@ -6,6 +6,7 @@
 package interfaz;
 
 import clases.NumeroComplejo;
+import java.awt.event.KeyEvent;
 
 /**
  *
@@ -53,9 +54,48 @@ public class Principal extends javax.swing.JFrame {
         jLabel1.setForeground(new java.awt.Color(0, 0, 51));
         jLabel1.setText("Operaciones Con Complejos");
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 0, -1, -1));
+
+        txtReal2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtReal2ActionPerformed(evt);
+            }
+        });
+        txtReal2.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtReal2KeyTyped(evt);
+            }
+        });
         jPanel1.add(txtReal2, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 60, 30, 30));
+
+        txtReal1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtReal1ActionPerformed(evt);
+            }
+        });
+        txtReal1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtReal1KeyTyped(evt);
+            }
+        });
         jPanel1.add(txtReal1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 60, 30, 30));
+
+        txtImaginario1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtImaginario1ActionPerformed(evt);
+            }
+        });
+        txtImaginario1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtImaginario1KeyTyped(evt);
+            }
+        });
         jPanel1.add(txtImaginario1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 60, 30, 30));
+
+        txtImaginario2.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtImaginario2KeyTyped(evt);
+            }
+        });
         jPanel1.add(txtImaginario2, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 60, 30, 30));
 
         jLabel3.setFont(new java.awt.Font("Segoe Script", 3, 14)); // NOI18N
@@ -81,6 +121,11 @@ public class Principal extends javax.swing.JFrame {
 
         cmdBorrar.setBackground(new java.awt.Color(204, 255, 255));
         cmdBorrar.setText("Borrar");
+        cmdBorrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmdBorrarActionPerformed(evt);
+            }
+        });
         jPanel1.add(cmdBorrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 140, -1, -1));
 
         txtRealResul.setEditable(false);
@@ -135,6 +180,60 @@ public class Principal extends javax.swing.JFrame {
         txtImaginarioResul.setText(""+c3.getNumero_imaginario());
         
     }//GEN-LAST:event_cmdCalcularActionPerformed
+
+    private void txtReal1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtReal1KeyTyped
+        char c=evt.getKeyChar(); 
+          if(!Character.isDigit(c)) { 
+              getToolkit().beep(); 
+              evt.consume();}
+    }//GEN-LAST:event_txtReal1KeyTyped
+
+    private void txtImaginario1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtImaginario1KeyTyped
+       char c=evt.getKeyChar(); 
+          if(!Character.isDigit(c)) { 
+              getToolkit().beep(); 
+              evt.consume();}
+    }//GEN-LAST:event_txtImaginario1KeyTyped
+
+    private void txtReal2KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtReal2KeyTyped
+       char c=evt.getKeyChar(); 
+          if(!Character.isDigit(c)) { 
+              getToolkit().beep(); 
+              evt.consume();}
+    }//GEN-LAST:event_txtReal2KeyTyped
+
+    private void txtImaginario2KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtImaginario2KeyTyped
+        char c=evt.getKeyChar(); 
+          if(!Character.isDigit(c)) { 
+              getToolkit().beep(); 
+              evt.consume();}
+    }//GEN-LAST:event_txtImaginario2KeyTyped
+
+    private void txtReal1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtReal1ActionPerformed
+        evt.setSource((char) KeyEvent.VK_CLEAR);
+        txtImaginario1.requestFocus();
+    }//GEN-LAST:event_txtReal1ActionPerformed
+
+    private void txtImaginario1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtImaginario1ActionPerformed
+        evt.setSource((char) KeyEvent.VK_CLEAR);
+        txtReal2.requestFocus();
+    }//GEN-LAST:event_txtImaginario1ActionPerformed
+
+    private void txtReal2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtReal2ActionPerformed
+       evt.setSource((char) KeyEvent.VK_CLEAR);
+        txtImaginario2.requestFocus();
+    }//GEN-LAST:event_txtReal2ActionPerformed
+
+    private void cmdBorrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdBorrarActionPerformed
+        txtReal1.setText("");
+        txtReal2.setText("");
+        txtImaginario1.setText("");
+        txtImaginario2.setText("");
+        txtRealResul.setText("");
+        txtImaginarioResul.setText("");
+        txtReal1.requestFocusInWindow();
+        cmbOperacion.setSelectedIndex(0);
+    }//GEN-LAST:event_cmdBorrarActionPerformed
 
     /**
      * @param args the command line arguments
