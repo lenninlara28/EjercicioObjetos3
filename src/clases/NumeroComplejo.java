@@ -18,6 +18,7 @@ public class NumeroComplejo {
         this.numero_imaginario=imaginario;
         
     }
+    
 
     public int getNumero_real() {
         return numero_real;
@@ -35,11 +36,11 @@ public class NumeroComplejo {
         this.numero_imaginario = numero_imaginario;
     }
     
-    public NumeroComplejo Suma(NumeroComplejo c2){
+    public  NumeroComplejo Suma(NumeroComplejo c2){
         NumeroComplejo c;
         int num_real,num_imaginario;
-        num_real=this.numero_real + c2.numero_real;
-        num_imaginario=this.numero_imaginario + c2.numero_imaginario;
+        num_real=this.getNumero_real() + c2.getNumero_real();
+        num_imaginario=this.getNumero_imaginario() + c2.getNumero_imaginario();
         
        c= new NumeroComplejo(num_real, num_imaginario);
        return c;
@@ -47,8 +48,8 @@ public class NumeroComplejo {
     public NumeroComplejo Resta(NumeroComplejo c2){
         NumeroComplejo c;
         int num_real,num_imaginario;
-        num_real=this.numero_real - c2.numero_real;
-        num_imaginario=this.numero_imaginario - c2.numero_imaginario;
+        num_real=this.getNumero_real()- c2.getNumero_real();
+        num_imaginario=this.getNumero_imaginario() - c2.getNumero_imaginario();
         
        c= new NumeroComplejo(num_real, num_imaginario);
        return c;
@@ -56,10 +57,10 @@ public class NumeroComplejo {
     public NumeroComplejo Multiplicacion(NumeroComplejo c2){
         NumeroComplejo c;
         int num_real,num_imaginario,comutativo_real1,comutativo_real2,comutativo_imaginario1,comutativo_imaginario2;
-        comutativo_real1=this.numero_real*c2.numero_real ;
-        comutativo_real2=this.numero_real*(-c2.numero_imaginario);
-        comutativo_imaginario1=this.numero_imaginario*c2.numero_real;
-        comutativo_imaginario2=this.numero_imaginario*c2.numero_imaginario;
+        comutativo_real1=this.getNumero_real()*c2.getNumero_real() ;
+        comutativo_real2=this.getNumero_real()*(-c2.getNumero_imaginario());
+        comutativo_imaginario1=this.getNumero_imaginario()*c2.getNumero_real();
+        comutativo_imaginario2=this.getNumero_imaginario()*c2.getNumero_imaginario();
         num_imaginario=comutativo_real2 + comutativo_imaginario1;
         num_real= comutativo_real1 + comutativo_imaginario2;
         
@@ -67,6 +68,15 @@ public class NumeroComplejo {
         return c;
     }
 
-    
+    public NumeroComplejo Dividir (NumeroComplejo c2) {
+        NumeroComplejo c;
+        int aux1,aux2,aux3;
+        aux1=c2.getNumero_real()*c2.getNumero_real() + c2.getNumero_imaginario()*c2.getNumero_imaginario();
+        aux2=(this.getNumero_real()*c2.getNumero_real()+this.getNumero_imaginario()*c2.getNumero_imaginario());
+        aux3=(this.getNumero_imaginario()*c2.getNumero_real()-this.getNumero_real()*c2.getNumero_imaginario());
+        
+        c=new NumeroComplejo(aux2, aux3);
+        return c;
+    } 
     
 }

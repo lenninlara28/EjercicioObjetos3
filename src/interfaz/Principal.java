@@ -7,6 +7,7 @@ package interfaz;
 
 import clases.NumeroComplejo;
 import java.awt.event.KeyEvent;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -156,6 +157,11 @@ public class Principal extends javax.swing.JFrame {
     private void cmdCalcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdCalcularActionPerformed
         int op,num_real1,num_imaginario1,num_real2,num_imaginario2;
         NumeroComplejo c1,c2,c3=null;
+        if (txtReal1.getText().isEmpty()||txtImaginario1.getText().trim().isEmpty()||
+            txtReal2.getText().trim().isEmpty()||txtImaginario2.getText().trim().isEmpty()){
+            JOptionPane.showMessageDialog(this, "Ingrese Complejos");
+            txtReal1.requestFocusInWindow();
+        }else{
         op=cmbOperacion.getSelectedIndex();
         num_real1=Integer.parseInt(txtReal1.getText());
         num_imaginario1=Integer.parseInt(txtImaginario1.getText());
@@ -175,10 +181,12 @@ public class Principal extends javax.swing.JFrame {
             case 2:
                 c3=c1.Multiplicacion(c2);
                 break;
+            case 3:
+                c3=c1.Dividir(c2);
         }
         txtRealResul.setText(""+c3.getNumero_real());
         txtImaginarioResul.setText(""+c3.getNumero_imaginario());
-        
+        }
     }//GEN-LAST:event_cmdCalcularActionPerformed
 
     private void txtReal1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtReal1KeyTyped
